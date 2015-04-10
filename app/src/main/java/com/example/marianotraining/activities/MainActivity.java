@@ -1,8 +1,11 @@
 package com.example.marianotraining.activities;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Base64;
 import android.util.Log;
 
 import com.example.marianotraining.R;
@@ -13,6 +16,9 @@ import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 import com.facebook.widget.LoginButton.UserInfoChangedCallback;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.Signature;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,7 +44,9 @@ public class MainActivity extends FragmentActivity {
 		loginBtn.setUserInfoChangedCallback(new UserInfoChangedCallback() {
 			@Override
 			public void onUserInfoFetched(GraphUser user) {
+               
 				if (user != null) {
+
                     if(user.getId().equals("10205887979742767")){
                         Intent postLogin = new Intent(MainActivity.this, AdministratorActivity.class);
                         postLogin.putExtra("user_id","10205887979742767");
