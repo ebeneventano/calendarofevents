@@ -22,7 +22,7 @@ import java.util.List;
  * Created by emmanuel on 27/02/15.
  */
 public class ListActivity extends ActionBarActivity {
-    private static final int HIGHLIGHT_COLOR = 0x999be6ff;
+  /*  private static final int HIGHLIGHT_COLOR = 0x999be6ff;
 
     // list of data items
     private List<ListData> mDataList = Arrays.asList(
@@ -190,5 +190,5 @@ public class ListActivity extends ActionBarActivity {
         public void setChecked(boolean isChecked) {
             this.isChecked = isChecked;
         }
-    }
+    } */
 }

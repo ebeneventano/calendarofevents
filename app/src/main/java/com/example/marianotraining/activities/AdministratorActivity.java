@@ -1,28 +1,30 @@
 package com.example.marianotraining.activities;
 
-import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Button;
 
-import com.example.marianotraining.DataItem;
-import com.example.marianotraining.DataSource;
-import com.example.marianotraining.ListActivity;
 import com.example.marianotraining.R;
 
 
-public class AdministratorActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
+public class AdministratorActivity extends Activity{
 
-        public static final String TYPE = "TYPE";
-        private DataSource mDataSource;
+    private Button createEventButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_administrator);
+
+        createEventButton = (Button) findViewById(R.id.buttonCrearEvento);
+        createEventButton.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                //Do stuff here
+            }
+        });
+    }
+     /*   private DataSource mDataSource;
         private ListView mListView;
 
         @Override
@@ -122,5 +124,5 @@ public class AdministratorActivity extends ActionBarActivity implements AdapterV
                 textView = (TextView) view.findViewById(R.id.textView);
             }
         }
-
+*/
 }
